@@ -30,15 +30,21 @@ public class Main
   public void loadCountries() 
   {
     // Open the data file. Please note that the file structure we're working with requires the full file path as shown here unlike what you saw in runestone where the file name was sufficient.
-    File file = new File("/workspaces/Countries/workspace/countries-data.csv");
+    
     
     //create a scanner and a loop to read from the file until you've read everything.
-    Scanner scan = new Scanner(countryArray);
-    // inside the loop you'll need to read in a line from the file and use "split" to break up the data into destinct parts.
-    while (scan.hasNext()){
-      countryArray[i] = scan.next();
-      i++;
+    try{
+      File file = new File("/workspaces/Countries/workspace/countries-data.csv");
+      Scanner scan = new Scanner(file);
+      scan.close();
+
+      while(scan.hasNext()){
+         
+      }
+    }catch (IOException e){
+      System.out.println("couldn't open the file");
     }
+    // inside the loop you'll need to read in a line from the file and use "split" to break up the data into destinct parts
     // create a new Country using your constructor with 4 arguments (each of the arguments is a different part of the line you've read in)
     Country france = new Country("France", "Paris", "French", /* image */);
     // inside the loop, set countryArray[i] to the created Country object
