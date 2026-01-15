@@ -82,7 +82,8 @@ public class Main
   */
   public void quizButtonClick()
   {
-    Scanner scan = new Scanner(System.in); 
+    //Scanner scan = new Scanner(System.in); 
+    String userAnswer = userInput.getText();
     
     
     
